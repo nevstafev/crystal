@@ -185,6 +185,7 @@ public class PriceServiceTest {
         Price expectedPrice3 = new Price("1", 1, 1, simpleDateFormat.parse("20.01.2013 00:00:00"), simpleDateFormat.parse("30.01.2013 00:00:00"), 120);
 
         Collection<Price> joinedPrices = priceService.joinPrices(Arrays.asList(existedPrice1, existedPrice2), Arrays.asList(newPrice1));
+
         assertThat(joinedPrices.size(), is(3));
         assertTrue(joinedPrices.containsAll(Arrays.asList(expectedPrice1, expectedPrice2, expectedPrice3)));
     }
@@ -203,6 +204,7 @@ public class PriceServiceTest {
         Price expectedPrice3 = new Price("1", 1, 1, simpleDateFormat.parse("25.01.2013 00:00:00"), simpleDateFormat.parse("30.01.2013 00:00:00"), 90);
 
         Collection<Price> joinedPrices = priceService.joinPrices(Arrays.asList(existedPrice1, existedPrice2, existedPrice3), Arrays.asList(newPrice1, newPrice2));
+
         assertThat(joinedPrices.size(), is(3));
         assertTrue(joinedPrices.containsAll(Arrays.asList(expectedPrice1, expectedPrice2, expectedPrice3)));
     }
